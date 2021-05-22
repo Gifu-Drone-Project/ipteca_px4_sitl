@@ -1,0 +1,20 @@
+<launch>
+
+    <!-- Static TF Publisher -->
+    <node pkg="tf" name="base2sonar" type="static_transform_publisher" args="0 0 0.05 0 -1.57 0 base_link sonar::link 100"/>
+
+    <!-- PX4 SITL -->
+    <arg name="vehicle" default="iris"/>
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world" />
+    <arg name="sdf" default="$(find ipteca_px4_sitl)/models/iris_sonar/model.sdf" />
+    <arg name="verbose" default="false"/>
+    <arg name="debug" default="false"/>
+
+    <include file="$(find px4)/launch/posix_sitl.launch" >
+        <arg name="sdf" value="$(arg sdf)" />
+        <arg name="vehicle" value="$(arg vehicle)" />
+        <arg name="verbose" value="$(arg verbose)" />
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="world" value="$(arg world)" />
+    </include>
+</launch>

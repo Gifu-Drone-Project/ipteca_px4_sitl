@@ -1,0 +1,10 @@
+<launch>
+
+    <node pkg="tf" name="base2sonar" type="static_transform_publisher" args="0 0 0 0 -1.57 0 base_link sonar::link 100"/>
+
+    <include file="$(find ipteca_px4_sitl)/launch/iris_2d_lidar_test.launch" >
+        <!-- <arg name="vehicle" value="iris_sonar"/> -->
+        <arg name="sdf" value="$(find ipteca_px4_sitl)/models/iris_sonar/model.sdf" />
+    </include>
+
+</launch>
