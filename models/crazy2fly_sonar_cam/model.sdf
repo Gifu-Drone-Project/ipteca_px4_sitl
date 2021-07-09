@@ -1,9 +1,9 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='iris_sonar_cam'>
+  <model name='crazy2fly_sonar_cam'>
 
     <include>
-      <uri>model://iris</uri>
+      <uri>model://crazy2fly</uri>
     </include>
 
     <!-- Sonar -->
@@ -13,7 +13,7 @@
     </include>
     <joint name="sonar_joint" type="fixed">
       <child>sonar::link</child>
-      <parent>iris::base_link</parent>
+      <parent>crazy2fly::base_link</parent>
     </joint>
 
     <!-- FPV Camera -->
@@ -23,7 +23,7 @@
     </include>
     <joint name="fpv_cam_joint" type="fixed">
       <child>fpv_cam::link</child>
-      <parent>iris::base_link</parent>
+      <parent>crazy2fly::base_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>

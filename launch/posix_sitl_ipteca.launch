@@ -4,11 +4,11 @@
     <node pkg="tf" name="base2sonar" type="static_transform_publisher" args="0 0 0.05 0 -1.57 0 base_link sonar::link 100"/>
 
     <!-- PX4 SITL -->
-    <arg name="vehicle" default="solo"/>
-    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/asphalt_plane.world" />
-    <arg name="sdf" default="$(find ipteca_px4_sitl)/models/solo_sonar_cam/model.sdf" />
-    <arg name="verbose" default="false"/>
-    <arg name="debug" default="false"/>
+    <arg name="vehicle" default="iris"/>
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world" />
+    <arg name="sdf" default="$(find ipteca_px4_sitl)/models/iris_sonar_cam/model.sdf" />
+    <arg name="verbose" default="true"/>
+    <arg name="debug" default="true"/>
 
     <include file="$(find px4)/launch/posix_sitl.launch" >
         <arg name="sdf" value="$(arg sdf)" />
